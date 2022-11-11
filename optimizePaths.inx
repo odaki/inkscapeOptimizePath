@@ -1,23 +1,24 @@
-<inkscape-extension>
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
    <_name>Optimize Paths</_name>
    <id>org.daekkyn.filter.optimizePaths</id>
-       <dependency type="executable" location="extensions">optimizePaths.py</dependency>
-       <dependency type="executable" location="extensions">inkex.py</dependency>
-     	 <param name="tolerance" type="float" min="0.0" max="100.0" _gui-text="Merge Tolerance:">0.10</param>
-       <param name="overwriteRule" type="optiongroup" appearance="radio" gui-text="Traceback:">
-           <item value="0">Allow</item>
-           <item value="1">Allow some</item>
-           <item value="2">Allow none</item>
-       </param>
-       <param name="enableLog" type="bool" _gui-text="Debug">false</param>
+   <dependency type="executable" location="extensions">optimizePaths.py</dependency>
 
-   <effect>
-               <object-type>path</object-type>
-                <effects-menu>
-                    <submenu _name="Generate from Path"/>
-                </effects-menu>
+   <param name="tolerance" type="float" min="0.0" max="100.0" _gui-text="Merge Tolerance:">0.10</param>
+   <param name="overwriteRule" type="optiongroup" appearance="radio" gui-text="Traceback:">
+       <_option value="0">Allow</_option>
+       <_option value="1">Allow some</_option>
+       <_option value="2">Allow none</_option>
+   </param>
+   <param name="enableLog" type="bool" _gui-text="Debug">false</param>
+
+   <effect needs-live-preview="false">
+       <object-type>path</object-type>
+       <effects-menu>
+           <submenu _name="Generate from Path"/>
+       </effects-menu>
    </effect>
    <script>
-       <command location="inx" interpreter="python">optimizePaths.py</command>
+       <command reldir="extensions" interpreter="python">optimizePaths.py</command>
    </script>
 </inkscape-extension>
